@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -15,7 +16,14 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/diceString"
         android:textSize="30sp"/>
-
+<!--Replace android:src with app:srcCompat to support vectors instead of created PNGs on older APIs  smaller than 18-->
+    <ImageView
+        android:id="@+id/dice_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/dice_1"
+        tools:src="@drawable/dice_6"/>
     <Button
         android:id="@+id/dice_button"
         android:layout_width="wrap_content"

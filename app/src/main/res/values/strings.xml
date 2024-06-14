@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Dice Roller</string>
     <string name="diceBtnString">Roll</string>
-    <string name="diceString">Waiting...</string>
+    <string name="diceString">Waiting&#8230;</string>
 </resources>
