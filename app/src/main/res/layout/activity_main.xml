@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/dice_1"
+        app:srcCompat="@drawable/dice_1k"
         tools:src="@drawable/dice_6"/>
     <Button
         android:id="@+id/dice_button"
@@ -30,5 +30,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/diceBtnString"/>
+    <Button
+        android:id="@+id/privacypolicy_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30pt"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/ppolicyString"
+        android:onClick="onClickOpenPrivacyPolicyButton"
+        android:textSize="12sp"/>
 
 </LinearLayout>
