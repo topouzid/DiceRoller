@@ -60,25 +60,35 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.diceButton.text = "Test"
+        binding.diceButton?.text = "Test"
+        binding.diceButtonDouble?.text = "Test"
 
-        val rollButton: Button = binding.diceButton
-        rollButton.text = "Let's Roll"
-        binding.resultTextview.text = "Roll that dice!"
+        val rollButton: Button? = binding.diceButton
+        rollButton?.text = "Let's Roll"
+        binding.resultTextview?.text = "Roll that dice!"
 //        binding.resultTextview.setText("Zero?")
 
-        rollButton.setOnClickListener {
-            Toast.makeText(this, "Dice Rolled", Toast.LENGTH_SHORT).show()
+        rollButton?.setOnClickListener {
+//            Toast.makeText(this, "Dice Rolled", Toast.LENGTH_SHORT).show()
             rollDice()
+        }
+
+        val rollButtonDouble: Button? = binding.diceButtonDouble
+        rollButtonDouble?.text = "Roll them!"
+        binding.resultTextviewDouble1?.text = "Waiting"
+        binding.resultTextviewDouble2?.text = "..."
+
+        rollButtonDouble?.setOnClickListener{
+            rollDiceDouble()
         }
 
     }
 
     private fun rollDice() {
         val randomInt = Random().nextInt(6) + 1
-        val resultText: TextView = binding.resultTextview
-        val resultDiceImage: ImageView = binding.diceImage
-        resultText.text = randomInt.toString()
+        val resultText: TextView? = binding.resultTextview
+        val resultDiceImage: ImageView? = binding.diceImage
+        resultText?.text = randomInt.toString()
         val diceDrawableResource = when(randomInt) {
             1 -> R.drawable.dice_1k
             2 -> R.drawable.dice_2k
@@ -88,7 +98,38 @@ class MainActivity : AppCompatActivity() {
             6 -> R.drawable.dice_6k
             else -> R.drawable.empty_dice
         }
-        resultDiceImage.setImageResource(diceDrawableResource)
+        resultDiceImage?.setImageResource(diceDrawableResource)
+    }
+
+    private fun rollDiceDouble() {
+        val randomInt1 = Random().nextInt(6) + 1
+        val randomInt2 = Random().nextInt(6) + 1
+        val resultText1: TextView? = binding.resultTextviewDouble1
+        val resultText2: TextView? = binding.resultTextviewDouble2
+        val resultDiceImage1: ImageView? = binding.diceImageDouble1
+        val resultDiceImage2: ImageView? = binding.diceImageDouble2
+        resultText1?.text = randomInt1.toString()
+        resultText2?.text = randomInt2.toString()
+        val diceDrawableResource1 = when(randomInt1) {
+            1 -> R.drawable.dice_1k
+            2 -> R.drawable.dice_2k
+            3 -> R.drawable.dice_3k
+            4 -> R.drawable.dice_4k
+            5 -> R.drawable.dice_5k
+            6 -> R.drawable.dice_6k
+            else -> R.drawable.empty_dice
+        }
+        val diceDrawableResource2 = when(randomInt2) {
+            1 -> R.drawable.dice_1k
+            2 -> R.drawable.dice_2k
+            3 -> R.drawable.dice_3k
+            4 -> R.drawable.dice_4k
+            5 -> R.drawable.dice_5k
+            6 -> R.drawable.dice_6k
+            else -> R.drawable.empty_dice
+        }
+        resultDiceImage1?.setImageResource(diceDrawableResource1)
+        resultDiceImage2?.setImageResource(diceDrawableResource2)
     }
 
     fun onClickOpenPrivacyPolicyButton(view: View) {
