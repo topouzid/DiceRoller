@@ -27,11 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/dice_1k"
-        tools:src="@drawable/dice_6"/>
+        tools:src="@drawable/dice_6"
+        android:contentDescription="@string/dice_image_desc"/>
     <Button
         android:id="@+id/dice_button"
-        android:layout_width="160sp"
-        android:layout_height="60sp"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/diceBtnString"/>
     <Space
@@ -39,13 +40,12 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
     <Button
-        android:id="@+id/privacypolicy_textview"
-        android:layout_width="160sp"
+        android:id="@+id/privacypolicy_buttonview"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30pt"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/ppolicyString"
-        android:onClick="onClickOpenPrivacyPolicyButton"
         android:textSize="12sp"/>
 
 </LinearLayout>
