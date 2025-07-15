@@ -4,6 +4,7 @@
     <string name="diceBtnString">Ρίξε</string>
     <string name="diceDblBtnString">Ρίξε Δύο</string>
     <string name="diceString">Ρίξε Ζάρι!</string>
+    <string name="diceString2">&#8230;</string>
     <string name="ppolicyString">Πολιτική Απορρήτου</string>
     <string name="dice_image_desc">" Τιμή Ζαριού"</string>
 </resources>

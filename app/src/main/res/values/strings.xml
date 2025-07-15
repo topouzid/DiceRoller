@@ -2,7 +2,8 @@
     <string name="app_name">Dice Roller</string>
     <string name="diceBtnString">Roll</string>
     <string name="diceDblBtnString">Double-Roll</string>
-    <string name="diceString">Roll the Dice!</string>
+    <string name="diceString">Roll the Dice</string>
+    <string name="diceString2">&#8230;</string>
     <string name="ppolicyString">Privacy Policy</string>
     <string name="dice_image_desc">Current dice value</string>
 </resources>
