@@ -7,6 +7,7 @@
     android:layout_gravity="center_vertical"
     android:gravity="center_vertical"
     android:orientation="vertical"
+    android:background="@color/bg_color"
     tools:context=".MainActivity">
 
     <Space
@@ -23,8 +24,9 @@
 <!--Replace android:src with app:srcCompat to support vectors instead of created PNGs on older APIs  smaller than 18-->
     <ImageView
         android:id="@+id/dice_image"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/dice_1k"
         tools:src="@drawable/dice_6"
@@ -41,9 +43,9 @@
         android:layout_weight="1"/>
     <Button
         android:id="@+id/privacypolicy_buttonview"
-        android:layout_width="160dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/ppolicyString"
         android:textSize="12sp"/>

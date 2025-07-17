@@ -5,85 +5,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:paddingTop="?attr/actionBarSize"
+    android:background="@color/bg_color"
     tools:context=".MainActivity">
 
     <!-- Dice Result TextView 1 -->
     <TextView
         android:id="@+id/result_textview_double_1"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="@string/diceString"
-        android:textSize="30sp"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/dice_image_double_1"
+        app:layout_constraintBottom_toTopOf="@id/dice_image_double_1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/result_textview_double_2"
-        app:layout_constraintHorizontal_bias="0.25" />
+        app:layout_constraintEnd_toStartOf="@id/result_textview_double_2" />
 
     <!-- Dice Image 1 -->
     <ImageView
         android:id="@+id/dice_image_double_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         app:srcCompat="@drawable/dice_1k"
         tools:src="@drawable/dice_6k"
         android:contentDescription="@string/dice_image_desc"
         app:layout_constraintTop_toBottomOf="@id/result_textview_double_1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/result_textview_double_1"
-        app:layout_constraintEnd_toEndOf="@id/result_textview_double_1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/dice_image_double_2" />
 
     <!-- Dice Result TextView 2 -->
     <TextView
         android:id="@+id/result_textview_double_2"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_marginTop="10dp"
         android:text="@string/diceString2"
-        android:textSize="30sp"
+        android:textSize="28sp"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/dice_image_double_2"
-        app:layout_constraintStart_toEndOf="@+id/result_textview_double_1"
-        app:layout_constraintEnd_toStartOf="@+id/dice_button_double"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintBottom_toTopOf="@id/dice_image_double_2"
+        app:layout_constraintStart_toEndOf="@id/result_textview_double_1"
+        app:layout_constraintEnd_toStartOf="@id/button_column" />
 
     <!-- Dice Image 2 -->
     <ImageView
         android:id="@+id/dice_image_double_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         app:srcCompat="@drawable/dice_1k"
         tools:src="@drawable/dice_6k"
         android:contentDescription="@string/dice_image_desc"
         app:layout_constraintTop_toBottomOf="@id/result_textview_double_2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/result_textview_double_2"
-        app:layout_constraintEnd_toEndOf="@id/result_textview_double_2" />
+        app:layout_constraintStart_toEndOf="@id/dice_image_double_1"
+        app:layout_constraintEnd_toStartOf="@id/button_column" />
 
-    <!-- Roll Button -->
-    <Button
-        android:id="@+id/dice_button_double"
-        android:layout_width="160dp"
-        android:layout_height="80dp"
-        android:text="@string/diceBtnString"
+    <!-- Roll and Privacy Buttons in a Vertical Stack -->
+    <LinearLayout
+        android:id="@+id/button_column"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/privacypolicy_textview"
-        app:layout_constraintStart_toEndOf="@id/dice_image_double_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
-
-    <!-- Privacy Policy Button -->
-    <Button
-        android:id="@+id/privacypolicy_textview"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:text="@string/ppolicyString"
-        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/dice_button_double"
-        app:layout_constraintEnd_toEndOf="@id/dice_button_double" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <Button
+            android:id="@+id/dice_button_double"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:text="@string/diceBtnString"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/privacypolicy_textview"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ppolicyString"
+            android:textSize="12sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+
+    <!-- Create a horizontal chain to balance the 3 sections -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/chain_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/chain_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
